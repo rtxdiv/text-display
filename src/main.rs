@@ -106,9 +106,8 @@ fn process_script(dir: &Path, script_values: &Vec<(String, f32)>) {
         }
         match fs::read_to_string(&file_path) {
             Ok(content) => {
-                let filtered_content: String = content.chars().filter(|c| !c.is_control()).collect();
                 print!("\x1B[2J\x1B[1;1H");
-                println!("{}", filtered_content)
+                println!("{}", content)
             }
             Err(e) => {
                 print!("\x1B[2J\x1B[1;1H");
